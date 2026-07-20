@@ -1,0 +1,16 @@
+Question 59;
+
+The difference between break and continue;
+
+break inside loops allows the loop to iterate just once
+continue inside loops skips a particular condition and move onto the next.
+
+ 		for (int counter = 1; counter <= 12; counter++)	{
+			int product = number * counter;
+			
+			System.out.printf("%d x %d = %d%n", number, counter, product);
+			break;
+		}
+
+	in this particular code, the output will be 2 x 1 = 2 only instead of looping through 1 to 12.
+

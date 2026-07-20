@@ -1,0 +1,5 @@
+Question 91
+
+I will use iteration and the do while loop type.
+
+do while basically do all the sum, count , average, highest and lowest while the sentinel value -1 is declared in the condition part

@@ -1,0 +1,86 @@
+	PSUDOCODE FOR NUMBER 1
+
+Start by asking the user to input 2 integers, 
+obtain it from them, 
+find the cube for each of the numbers extracted from the user,
+multiply the results of the numbers cubes,
+condition a statement that state if cube of the first number  is higher than cube of the second number, the first number should be the numerator else the cube osecond number should be the numerator.
+then the remainder from when the condition is processed, should be printed out along with the cube of each numbers and product of their cubes
+
+
+
+PSUDOCODE FOR Question 2
+Start by asking the user to input 2 integers,
+obtain it from them,
+calculate its cube
+compare if the number inputted and its cube are less than or equal to 500
+
+PSUDOCODE FOR QUESTION 3
+Start by asking the user to input 4 integers.
+obtain it from them
+calculate its sum, average, product.
+to calculate for smallest, you will condition that each number to be smallest in a nested if-else for each number.
+to calculate for largest, you will condition that each number to be smallest in a nested if-else for each number.
+
+PSUDOCODE FOR QUESTION 5
+Start by asking the user to input 6 integers.
+obtain it from them
+to calculate for smallest, you will condition that each number to be smallest in a nested if-else for each number.
+to calculate for largest, you will condition that each number to be smallest in a nested if-else for each number.
+
+
+PSUDOCODE FOR QUESTION 6
+Start by asking the user to input an integer.
+obtain it from the user
+Use if statement to condition if the number divided by 7 has remainder zero, the number is divisible by 7,
+else if the number divided by 7 has a remainder not equal to zero, the number is not divisible by 7
+else the number is equal to zero.
+Also if the number divided by 2 has zero remainder, the number is an even number 
+else it is an odd number  
+
+PSUDOCODE FOR QUESTION 7
+Start by asking the user to input 2 integers.
+obtain it from the user
+using the integers collected, calculate the square of the first number and the cube of the second number
+Use if statement to condition if the square of the first number divided by the cube of the second number has remainder zero, then the first number squared is a multiple of the second number cubed.
+else if the square of the first number divided by the cube of the second number doesn't have remainder zero, then the first number squared is not a multiple of the second number cube.
+
+PSUDOCODE FOR QUESTION 8
+Start by asking for the length and width of the rectangle using integers
+obtain it from the user
+Use the integers collected to calculate the perimeter of the rectangle by adding both integers then multiplying it by 2.
+Use the integers to calculate for area by multiplying both integers
+Also calculate for the length of the diagonal by multiplying 1.4142 by the sum of the square of both integers; all divided by 2.
+
+
+
+PSUDOCODE FOR QUESTION 9
+1) Start by obtaining integer input from the user
+2) Then you separate the first number from the integer by number % 10000/1000
+3) you separate the first number from the integer by number % 1000/100
+4) you separate the first number from the integer by number % 100/10
+5) you separate the first number from the integer by number % 10
+
+PSUDOCODE FOR QUESTION 1
+1) Start by declaring the variables for 1 through 10,
+2) use these variables to calculate for square and cube for all the 5 numbers
+3) Then we call the variables in the System.out.printf statement sequentially.s
+
+
+PSUDOCODE FOR QUESTION 2
+1) Break down the numerator into 2 parts by separation the numbers with multiplication between them
+2) then substract the values gotten from second part from the first part.
+3) Solve for the denomerator too
+4) divide the numerator by the denomerator to get our result.
+
+PSUDOCODE FOR QUESTION 4
+1) Collect input for all the sides in the triangle (left,Right, base and height)
+2) Calculate for Area of Triangle and store the value in a variable
+3) Calculate for perimeter of the Triangle and store the value in a variable
+4) the we call the variables using printf 
+
+PSUDOCODE FOR QUESTION 5
+1) Collect input for the user Distance and time taken in hours and minutes
+2) then we convert the minutes to hours and add it to the initial hour value
+3) calculate for average speed using the formula ; distance over time.
+4) we call the variables using printf

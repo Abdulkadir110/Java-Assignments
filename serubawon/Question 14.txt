@@ -1,0 +1,10 @@
+Question 14
+
+Declaration introduces a variable to the program, while initialization assigns it a value.
+
+
+int variableName = 89;  // initializing
+
+int salary;             // delaration
+
+

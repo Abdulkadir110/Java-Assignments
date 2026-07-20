@@ -1,0 +1,4 @@
+Question 11
+
+The error in this sequence is "total variable is not declared"
+and the reason is because it was declared after writing a statement to display it.

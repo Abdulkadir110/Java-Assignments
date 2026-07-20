@@ -1,0 +1,7 @@
+Question 84
+
+The output is
+
+* 
+* *
+* * *

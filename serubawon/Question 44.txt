@@ -1,0 +1,8 @@
+Question 44
+if we use if statement three times instead of if/else if/else
+
+remember java executes sequentially.
+
+if implemented three times, the compiler doesnt see those block as one condition but as seperate condition, so if an input met  2 if conditions  it will executes whatever is in those blocks seperately instead of picking just one.
+
+ 

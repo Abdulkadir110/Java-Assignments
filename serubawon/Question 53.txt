@@ -1,0 +1,18 @@
+Question 53
+
+An infinite loop occurs when a loop repeatedly executes without a sentinel or terminating condition or when the condition is always true. 
+
+	while(counter <= 10) {
+			System.out.print("Enter the integer: ");
+			number = input.nextInt();;
+			counter++;
+			
+			sum += number;
+			System.out.printf("The sum of the numbers is: %d%n", sum);
+
+		}
+
+
+to correct this  i need to add a sentinel value to the while condition inorder for the user to input the value for termination.
+
+but in the case of no collection of input you can state a condition that says the loop should loop between.

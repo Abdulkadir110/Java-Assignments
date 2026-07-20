@@ -1,0 +1,4 @@
+Question 19
+
+when you print a variable before it has been assigned to a value, it doesnt execute because the variable has not been declared before printing it out
+Error : "Compilation Error"

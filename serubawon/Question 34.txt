@@ -1,0 +1,12 @@
+Question 34
+
+The difference between == and .equals()
+
+The == is used to compare integers and .equals() is used to compare strings together.
+
+String username = input.nextLine();
+String correctUsername = "Admin";
+
+if (username == correctUsername) && password == correctPassword) {
+			System.out.println("Access granted");
+		}

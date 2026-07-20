@@ -1,0 +1,10 @@
+Question 69
+
+initialization : This part is when you declare your control statement
+
+condition: this part is the condition of the loop, it states the contents and termination process. it also put the loops in ranges.
+
+update: This part is for the increment or decrement either prefix or postfix, after every condition is met, it checks the update part to update the number and loop again as far as the number is within the condition range.
+
+if the condition is always true, then infinity loops occurs.
+and if it is false from start, nothing will be executed. 

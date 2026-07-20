@@ -1,0 +1,6 @@
+Question 56
+
+
+the final value in the output is 
+count = 6;
+

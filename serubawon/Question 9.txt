@@ -1,0 +1,5 @@
+Question 9
+
+The final value for variable name firstNumber is : 8
+The final value for variable name secondNumber is : 24
+The final value for variable name thirdNumber is : 10

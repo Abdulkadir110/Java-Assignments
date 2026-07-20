@@ -1,0 +1,12 @@
+Question 51;
+
+		for(int count =1; count <=5; count++) {
+			System.out.println(count * count);
+		}
+The Output of the code is
+
+1
+4
+9
+16
+25

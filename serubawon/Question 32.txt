@@ -1,0 +1,7 @@
+Question 32
+
+when a =5 and b = 0;
+
+what is printed is: 
+
+B wins

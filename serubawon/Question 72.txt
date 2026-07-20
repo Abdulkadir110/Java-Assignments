@@ -1,0 +1,7 @@
+Question 72;
+
+2 is even
+4 is even
+1 is odd
+3 is odd
+5 is odd

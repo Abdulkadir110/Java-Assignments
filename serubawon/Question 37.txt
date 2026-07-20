@@ -1,0 +1,2 @@
+Question 37
+Short-circuit evaluation in Java is a programming technique used with logical operators '&&' (AND) and '||' (OR) that stops evaluating a boolean expression as soon as the outcome is determined.

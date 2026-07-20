@@ -1,0 +1,18 @@
+//Question 100
+
+Psedocode
+
+import Scanner from java util library
+
+create a for loop that counts from 1 to 10 for the employees number
+
+inside the loop collect inputs for thier names and hourly wage 
+
+compute each employee weekly pay using the variable declared to collect the hourly wage an hours.
+		weekly pay = (hours * wage, with time and a half for hours above 40);
+
+if Employee weekly pay < 50,000, print low
+else if Employee weekly pay is between 50,000 to 150,000, print Mid,
+else if Employee weekly pay is above 150,000, print high.
+
+then using printf method under System.out object we will print the report of payroll for the 10 employees.

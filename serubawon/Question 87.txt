@@ -1,0 +1,8 @@
+Question 87
+
+
+A syntax error happens when the structure of your code does not go with to the rules of the programming language you are using.
+
+A logic error is a condition where a program produces a result that is not logically correct, but not reported as an error. 
+
+A runtime error occurs when a program encounters an unexpected condition while executing the code, causing crashes

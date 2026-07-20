@@ -1,0 +1,5 @@
+Question 4
+
+basically java complies code line by line.
+
+A sequence statement is a statement that executes in the order in the program 

@@ -1,0 +1,5 @@
+Question 81
+
+A pre-test loop checks its condition before executing the loop body (while/for loop), while a post-test loop checks the condition after executing the loop body at least once(do while).
+
+

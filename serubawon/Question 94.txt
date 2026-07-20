@@ -1,0 +1,3 @@
+Question 94
+
+the output for sum is 20;
