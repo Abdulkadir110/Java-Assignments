@@ -118,7 +118,7 @@ public class ArrayKata {
         int numberOfEvenNumbers = 0;
         
         for (int index = 0; index < numbers.length; index++){
-              if (numbers[index] % 2 == 0) {
+              if (index % 2 == 0) {
                  numberOfEvenNumbers++;  
               }
             
@@ -128,18 +128,65 @@ public class ArrayKata {
 
         int evenIndex = 0;
 
-          for(int index = 0; index < evenNumbers.length; index++){
+          for(int index = 0; index < numbers.length; index++){
                if (numbers[index] % 2 == 0) {
-                    evenNumbers[evenIndex] = numbers[index]; 
-                    evenIndex++; 
+                    evenNumbers[evenIndex++] = numbers[index]; 
               }
             }
-          for (int index = 0; index < evenNumbers.length; index++){
-                return evenNumbers;
-            }
-            return evenNumbers;
+            return evenNumbers;      
+    }
+
+    public static int[] oddNumbersIn(int [] numbers) {
+        int numberOfOddNumbers = 0;
+        
+        for (int index = 0; index < numbers.length; index++){
+              if (index % 2 != 0) {
+                 numberOfOddNumbers++;  
+              }
+            
+        }
+        
+        int[] oddNumbers = new int [numberOfOddNumbers];
+
+        int oddIndex = 0;
+
+          for(int index = 0; index < numbers.length; index++){
+               if (numbers[index] % 2 != 0) {
+                    oddNumbers[oddIndex++] = numbers[index]; 
+              }
+          }
+       return oddNumbers;
         
     }
     
+     public static int[] squareNumbersIn(int [] numbers) {
+        int numberOfSquareNumbers = 0;
+        
+        for (int index = 0; index < numbers.length; index++){
+                double root = Math.pow(numbers[index], 0.5);
+                double square = root * root;
+                 int result = (int)square;
 
+                if (result == numbers[index]) {
+                    if(numbers[index] % root == 0)numberOfSquareNumbers++;  
+              }
+            
+        }
+        
+        int[] squareNumbers = new int [numberOfSquareNumbers];
+
+        int squareIndex = 0;
+
+          for(int index = 0; index < numbers.length; index++){
+                double root = Math.pow(numbers[index], 0.5);
+                double square = root * root;
+                       int result = (int)square;
+
+                if (result == numbers[index]) {
+                    if(numbers[index] % root == 0)squareNumbers[squareIndex++] = numbers[index]; 
+              }
+          }
+       return squareNumbers;
+        
+    }
 }
