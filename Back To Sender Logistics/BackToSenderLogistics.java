@@ -6,23 +6,25 @@ public class BackToSenderLogistics {
         System.out.print("Enter the number of succesful deliveries: ");
         int successfulDelivery = userInput.nextInt();
         
-        logisticsPayment(successfulDelivery);
+        int riderWage = logisticsPayment(successfulDelivery);
+        System.out.println("The rider wage for the day is: ₦" + riderWage);
     }
-    public void logisticsPayment(int successfulDelivery) {
+    public int logisticsPayment(int successfulDelivery) {
         if(successfulDelivery < 50) {
-            System.out.println("The rider wage for the day is: ₦" + riderWageForSuccessfulDeliveryBelowFiftyPercent(successfulDelivery));
+            return riderWageForSuccessfulDeliveryBelowFiftyPercent(successfulDelivery);
         }
         else if(successfulDelivery >= 50 && successfulDelivery < 60) {
-            System.out.println("The rider wage for the day is: ₦" + riderWageForSuccessfulDeliveryBetweenFiftyToFiftyNinePercent(successfulDelivery));
+            return riderWageForSuccessfulDeliveryBetweenFiftyToFiftyNinePercent(successfulDelivery);
         }
         else if(successfulDelivery >= 60 && successfulDelivery < 70) {
-            System.out.println("The rider wage for the day is: ₦" + riderWageForSuccessfulDeliveryBetweenSixtyToSixtyNinePercent(successfulDelivery));
+            return riderWageForSuccessfulDeliveryBetweenSixtyToSixtyNinePercent(successfulDelivery);
         }
         else if(successfulDelivery >= 70) {
-            System.out.println("The rider wage for the day is: ₦" + riderWageForSuccessfulDeliveryAboveSeventyPercent(successfulDelivery));
+            return riderWageForSuccessfulDeliveryAboveSeventyPercent(successfulDelivery);
         }
         else {
             System.out.println("The Driver is lying, they were all given 100 packages each to deliver.");
+            return 0;
         }
     }    
     
@@ -48,3 +50,5 @@ public class BackToSenderLogistics {
     }
 
 }
+
+

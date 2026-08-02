@@ -34,4 +34,13 @@ public class BackToSenderLogisticsTest {
 
         assertEquals(expected, result);
     }
+
+    @Test
+    public void testForTheAmountOfTheCollectionRate() {
+        BackToSenderLogistics logistics = new BackToSenderLogistics();
+        int result = logistics.logisticsPayment(50);
+        int expected = 15000;
+
+        assertEquals(expected, result);
+    }
 }
