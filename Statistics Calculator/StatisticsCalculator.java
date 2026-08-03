@@ -130,10 +130,10 @@ public class StatisticsCalculator{
 
         for (int index = 0; index < numbers.length; index++) {
                  differenceBetweenEachNumberAndMean = numbers[index] - calculateMeanOf(numbers);
-                 sum += differenceBetweenEachNumberAndMean;
+                 squareDeviation = Math.pow(differenceBetweenEachNumberAndMean, 2);
+                 sum += squareDeviation;
         }
-        squareDeviation = sum * sum;
-        variance = squareDeviation / numbers.length - 1;
+        variance = sum / numbers.length;
     
         return variance;
     } 

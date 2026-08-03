@@ -113,7 +113,7 @@ public class StatisticsCalculatorTest{
 	//When
 	double expectedVariance = StatisticsCalculator.calculateVarianceOf(numbers);
 
-    double actualvariance = 0.2857142857142858;
+    double actualvariance = 63.57142857142857;
 
 
     //Check
@@ -129,7 +129,7 @@ public class StatisticsCalculatorTest{
 	//When
 	double expectedStandardDeviation = StatisticsCalculator.calculateStandardDeviationOf(numbers);
 
-    double actualStandardDeviation = 0.040816326530612256;
+    double actualStandardDeviation = 9.081632653061224;
 
 
     //Check
@@ -145,7 +145,7 @@ public class StatisticsCalculatorTest{
 	//When
 	double expectedCoefficientOfVariance = StatisticsCalculator.calculateCoefficientOfVarianceOf(numbers);
 
-    double actualCoefficientOfVariance = 0.5830903790087465;
+    double actualCoefficientOfVariance = 129.73760932944606;
 
 
     //Check

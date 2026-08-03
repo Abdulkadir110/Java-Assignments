@@ -1,0 +1,3 @@
+javac -cp ".:../tdd/junit-platform-console-standalone-1.11.0.jar:out" -d out TestFile.java CodeFile.java
+
+java -jar ../tdd/junit-platform-console-standalone-1.11.0.jar -cp out --scan-class-path
