@@ -63,6 +63,9 @@ public class CreditCardVerifier {
                 System.out.println("Discover cards");
             }
         }
+        else {
+            System.out.println("Invalid Card");
+        }
     }
 
     public static boolean isStartWithAValidCardNumber(String cardNumber) {
