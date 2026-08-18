@@ -7,57 +7,48 @@ public class DistinctNumbers{
         int[] numbers = new int[10];
         System.out.print("Enter ten numbers: ");
             for(int index = 0; index < 10; index++){
+                  System.out.print("Enter number at index" + index + ": ");
                   numbers[index] = inputCollector.nextInt();
             }
-          System.out.print(getDistinctCount(numbers));
-//        countEachElementIn(numbers);
-          System.out.print(Arrays.toString(getNewDistinctOf(numbers)));
+        System.out.println(Arrays.toString(distinctOf(numbers)));
+        System.out.println("The number is 6 but was: " + countDistinct(numbers));
         
     }
-    public static int getDistinctCount(int [] numbers){
+    public static int countDistinct(int [] numbers){
         int count = 0;
         int duplicateCounter = 0;
-        for(int number = 0; number < numbers.length; number++){
-            for(int checker = 0; checker < number; checker++) {
-                if(numbers[number] == numbers[checker]){
-                    duplicateCounter++
+        
+        for(int index = 0; index < numbers.length; index++) {
+            duplicateCounter = 0;
+            for(int secondIndex = 0; secondIndex < index; secondIndex++){
+                if(numbers[index] == numbers[secondIndex]){
+                    duplicateCounter++;
                 }
             }
-            count = 0;
-            for(int index = 0; index < numbers.length; index++){
-                if(duplicateCounter > 0){
-                    count = 1;
-                }
-                else {
-                    count++;
-                }
+            if(duplicateCounter == 0){
+                count++;
             }
         }
-         return count;
+        return count;
     }
-
-    public static int[] getNewDistinctOf(int [] numbers) {
-        int[] distinct = new int [getDistinctCount(numbers)];
-        int distinctIndex = 0;
-        
+     
+    public static int[] distinctOf(int[] numbers) {
+        int length = countDistinct(numbers);
+        int[] distincts = new int[length];
         int duplicateCounter = 0;
-        for(int number = 0; number < numbers.length; number++){
-            for(int checker = 0; checker < number; checker++) {
-                if(numbers[number] == numbers[checker]){
-                    duplicateCounter++
+        int count = 0;
+        for(int index = 0; index < numbers.length; index++){
+            duplicateCounter = 0;
+            for(int secondIndex = 0; secondIndex < index; secondIndex++){
+                if(numbers[index] == numbers[secondIndex]){
+                    duplicateCounter++;
                 }
             }
-            count = 0;
-            for(int index = 0; index < numbers.length; index++){
-                if(duplicateCounter > 0){
-                    
-                }
-                else {
-                    count++;
-                }
+            if(duplicateCounter == 0) {
+                distincts[count] = numbers[index];
+                count++;
             }
         }
-        
-         return distinct;
-      }
- }
+        return distincts;
+    }
+}
