@@ -14,6 +14,7 @@ public class AutomaticBike {
         return isOn;
     }
     public void setGear(int gear) {
+        if(!(status()))throw new IllegalArgumentException("The bike is not on");
         gearStatus = gear;
     }
     public int getGear() {

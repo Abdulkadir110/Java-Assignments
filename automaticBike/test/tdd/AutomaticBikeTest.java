@@ -35,6 +35,13 @@ public class AutomaticBikeTest {
         assertEquals(bike.getGear(), 1);
     }
     @Test
+    public void bikeIsOff_GearOne(){
+        bike.turnOff();
+        assertFalse(bike.status());
+        assertThrows(IllegalArgumentException.class,() -> bike.setGear(1));
+        assertEquals(bike.getGear(), 0);
+    }
+    @Test
     public void bikeOnGearTwo(){
         bike.turnOn();
         assertTrue(bike.status());
