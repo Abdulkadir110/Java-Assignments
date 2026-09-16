@@ -16,7 +16,7 @@ public class GeoZones {
         for(Zones zone : Zones.values()) {
             for( String eachZone : zone.getStates()){
                  if((eachZone.equals(getState()))){
-                     return zone.name();
+                     return zone.toString();
                 }
             }
         }
