@@ -33,7 +33,7 @@ public class AutomaticBikeTest {
         assertTrue(bike.status());
         bike.setGear(1);
         assertEquals(bike.getGear(), 1);
-    }
+    }`
     @Test
     public void bikeIsOff_GearOne(){
         bike.turnOff();

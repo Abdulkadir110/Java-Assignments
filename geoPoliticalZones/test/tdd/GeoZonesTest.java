@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.Test;
 import tdd.GeoZones;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GeoZonesTest {
     @Test
@@ -12,9 +11,8 @@ public class GeoZonesTest {
         assertEquals("SOUTH_WEST", zone.getZoneFor());
     }
     @Test
-    void test2(){
-        GeoZones zone = new GeoZones("dered");
-
-        assertNull(zone.getZoneFor());
+    void test_to_throw_ExceptionForInvalidStates(){
+        GeoZones zone = new GeoZones("vered");
+        assertThrows(IllegalArgumentException.class, () -> zone.getZoneFor());
     }
 }

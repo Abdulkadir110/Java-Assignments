@@ -56,6 +56,7 @@ public class CreditCardValidator {
     public String getCardType(){
         return cardType;
     }
+
     private int[] toDigitArray() {
         int[] cardNumbers = new int[cardNumber.length()];
         for (int index = 0; index < cardNumber.length(); index++) {

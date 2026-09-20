@@ -27,11 +27,11 @@ public class Queue {
         return queueContents[headIndex];
     }
     public String poll() {
-        if (headIndex >= queueContents.length)return null;
+        if (headIndex > queueContents.length)return null;
         return queueContents[headIndex++];
     }
     public String remove() {
-        if (headIndex >= queueContents.length)throw new IllegalArgumentException("Empty Queue");
+        if (headIndex > queueContents.length)throw new IllegalArgumentException("Empty Queue");
         return queueContents[headIndex++];
     }
 }

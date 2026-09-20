@@ -3,15 +3,22 @@ package tdd;
 import java.util.List;
 
 public class Person {
-    private List<Problem> problemList;
+    private List<String> problemList;
+    private boolean problemStatus;
 
-    void addProblem(String problem){
-
+    public void addProblem(String problem){
+        problemList.add(problem);
+        problemStatus = false;
     }
-    void solveProblem(){
-
+    public void solveProblem(){
+        problemStatus = true;
     }
-    List<Problem> tellProblem(){
+
+    public boolean isProblemStatus() {
+        return problemStatus;
+    }
+
+    public List<String> tellProblem(){
         return problemList;
     }
 }

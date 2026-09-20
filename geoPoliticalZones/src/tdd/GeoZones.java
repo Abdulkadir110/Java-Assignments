@@ -17,9 +17,9 @@ public class GeoZones {
             for( String eachZone : zone.getStates()){
                  if((eachZone.equals(getState()))){
                      return zone.toString();
-                }
+                 }
             }
         }
-        return null;
+        throw new IllegalArgumentException("No region for this state");
     }
 }
