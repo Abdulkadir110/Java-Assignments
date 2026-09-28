@@ -3,7 +3,10 @@ package tdd;
 public class Account {
     private double balance;
     private String pin;
-
+    public Account(String pin){
+        if(pin.length() != 4) throw new IllegalArgumentException("Length should be 4");
+        this.pin = pin;
+    }
     public double getBalance(String pin) {
         if(!pin.equals(this.pin)) throw new IllegalArgumentException("Incorrect Pin");
         return balance;
@@ -19,16 +22,4 @@ public class Account {
             throw new IllegalArgumentException("Incorrect Pin");
         }
     }
-    public void setPin(String pin) {
-        this.pin = pin;
-    }
-    public void updatePin(String oldPin, String newPin){
-        if(oldPin.equals(this.pin)){
-            this.pin = newPin;
-        }
-        else{
-            throw new IllegalArgumentException("Incorrect Pin");
-        }
-    }
-
 }
