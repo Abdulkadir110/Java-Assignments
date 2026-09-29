@@ -27,7 +27,12 @@ public class AccountTest {
         //Given
         assertEquals(0.0, myAccount.getBalance(correctPin));
         //When
-        myAccount.deposit(-5_000);
+        try {
+            myAccount.deposit(-5_000);
+        }
+        catch (IllegalArgumentException e ){
+            //Nothing
+        }
         //Check
         assertEquals(0.0, myAccount.getBalance(correctPin));
     }
@@ -45,7 +50,11 @@ public class AccountTest {
     public void testThatICantWithdrawNegativeAmount(){
         assertEquals(0.0, myAccount.getBalance(correctPin));
         myAccount.deposit(5_000);
-        myAccount.withdraw(-2000,correctPin);
+        try {
+            myAccount.withdraw(-2000,correctPin);
+        }catch (IllegalArgumentException e){
+            //Nothing
+        }
         assertEquals(5000, myAccount.getBalance(correctPin));
     }
     @Test
