@@ -5,7 +5,7 @@ public class Account {
     private String pin;
 
     public Account(String defaultPin){
-        if(defaultPin.length() != 4) throw new IllegalArgumentException("Length should be 4");
+        validateLength(defaultPin);
         this.pin = defaultPin;
     }
     public double getBalance(String userPin) {
@@ -21,6 +21,9 @@ public class Account {
         validate(amount);
         boolean isValidTransaction = amount <= balance;
         if(isValidTransaction)balance -= amount;
+    }
+    private void validateLength(String pin){
+        if(pin.length() != 4) throw new IllegalArgumentException("Please put a 4 digits Pin");
     }
     private void validate(String userPin){
         if(!pin.equals(userPin)) throw new IllegalArgumentException("Invalid pin");
