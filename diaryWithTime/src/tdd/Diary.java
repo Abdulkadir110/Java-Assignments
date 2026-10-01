@@ -27,17 +27,14 @@ public class Diary {
         return isLocked;
     }
     public void createEntry(String title, String body) {
-        Entry entry = new Entry(entries.size() + 1, title, body);
+        int id = generateId();
+        Entry entry = new Entry(id, title, body);
         entries.add(entry);
     }
     public void deleteEntry(int givenId){
         validate(givenId);
-        for(Entry entry : entries){
-            if(entry.getId() == givenId) {
-                entries.remove(entry);
-                break;
-            }
-        }
+        Entry foundEntry = findEntryById(givenId);
+        entries.remove(foundEntry);
     }
     public Entry findEntryById(int givenId) {
         boolean isValidId = isValid(givenId);
@@ -48,6 +45,15 @@ public class Diary {
             }
         }
         return null;
+    }
+    public void updateEntry(int givenId, String newTitle, String newBody) {
+        validate(givenId);
+        Entry foundEntry = findEntryById(givenId);
+        foundEntry.setTitle(newTitle);
+        foundEntry.setBody(newBody);
+    }
+    private int generateId() {
+        return entries.size() + 1;
     }
     private void validatePassword(String userPassword){
         if(!this.password.equals(userPassword)) throw new IllegalArgumentException("Incorrect Password");
