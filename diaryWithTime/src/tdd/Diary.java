@@ -52,6 +52,11 @@ public class Diary {
         foundEntry.setTitle(newTitle);
         foundEntry.setBody(newBody);
     }
+
+    public String getUsername() {
+        return username;
+    }
+
     private int generateId() {
         return entries.size() + 1;
     }
