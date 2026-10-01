@@ -6,7 +6,6 @@ import java.util.List;
 public class Bank {
     private List<Account> accounts = new ArrayList<>();
 
-
     public int createAccount(String accountName, String userPin) {
         int accountNumber =  accounts.size() + 1;
         Account account = new Account(userPin);
