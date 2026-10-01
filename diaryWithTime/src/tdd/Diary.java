@@ -35,6 +35,7 @@ public class Diary {
         for(Entry entry : entries){
             if(entry.getId() == givenId) {
                 entries.remove(entry);
+                break;
             }
         }
     }
@@ -52,7 +53,7 @@ public class Diary {
         if(!this.password.equals(userPassword)) throw new IllegalArgumentException("Incorrect Password");
     }
     private boolean isValid(int givenId) {
-        return givenId >= 1 && givenId <= entries.size() + 1;
+        return givenId >= 1 && givenId <= entries.size();
     }
     private void validate(int givenId){
         if(!isValid(givenId)) throw new IllegalArgumentException("Invalid id");
