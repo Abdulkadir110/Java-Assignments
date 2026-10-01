@@ -1,13 +1,11 @@
 package diary;
 
 public class Diary {
-    private String name;
     private final String password;
     private String[] entries;
     private int entriesCount;
 
-    public Diary(String name, String password) {
-        this.name = name;
+    public Diary( String password) {
         this.password = password;
         this.entries = new String[10];
     }
@@ -39,6 +37,9 @@ public class Diary {
             entries[count] = entries[count + 1];
         }
         entries[--entriesCount] = null;
+    }
+    public void validatePassword(String password){
+        if (!password.equals(this.password)) throw new IllegalArgumentException("Incorrect password");
     }
     private void checkPassword(String userPassword) {
         if (!this.password.equals(userPassword)) {

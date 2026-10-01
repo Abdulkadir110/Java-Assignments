@@ -12,7 +12,7 @@ public class DiaryTest {
     private final String wrongPassword = "1234";
     @BeforeEach
     void startWith(){
-        diary = new Diary("Abdulkadir", correctPassword);
+        diary = new Diary(correctPassword);
     }
     @Test
     void testThatDiary_isEmpty(){
@@ -77,7 +77,6 @@ public class DiaryTest {
         diary.deleteEntry(correctPassword, 0);
         diary.deleteEntry(correctPassword, 0);
         assertTrue(diary.isEmpty());
-
     }
     @Test
     void testIAddXY_DeleteX_ViewEntries_X_NotThere(){
@@ -87,5 +86,15 @@ public class DiaryTest {
         diary.deleteEntry(correctPassword, 0);
         String[] actualDiary = {"Mr. Chi Assignment"};
         assertArrayEquals(actualDiary, diary.viewEntries(correctPassword));
+    }
+    @Test
+    void testIAddXY_DeletedX_Entrie_IsNotEmpty(){
+        assertTrue(diary.isEmpty());
+        diary.addEntry(correctPassword,"I have a demo");
+        diary.addEntry(correctPassword,"Mr. Chi Assignment");
+        assertFalse(diary.isEmpty());
+        diary.deleteEntry(correctPassword, 1);
+        assertFalse(diary.isEmpty());
+
     }
 }
