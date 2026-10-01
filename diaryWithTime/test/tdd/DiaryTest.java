@@ -61,7 +61,7 @@ public class DiaryTest {
         myDiary.unlockDiary(correctPassword);
         assertFalse(myDiary.isLocked());
         myDiary.createEntry("School resumption", "I am going to school  tomorrow");
-        assertThrows(IllegalArgumentException.class, () -> myDiary.findEntryById(2));
+        assertNull(myDiary.findEntryById(2));
     }
     @Test
     void userUnlock_UserCreatesTwoEntry_DeleteOne_checkTheDeletedEntry(){
