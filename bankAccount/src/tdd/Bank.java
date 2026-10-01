@@ -6,8 +6,11 @@ import java.util.List;
 public class Bank {
     private List<Account> accounts = new ArrayList<>();
 
+    private int generateAccountNumber() {
+        return accounts.size() + 1;
+    }
     public int createAccount(String accountName, String userPin) {
-        int accountNumber =  accounts.size() + 1;
+        int accountNumber = generateAccountNumber();
         Account account = new Account(userPin);
         accounts.add(account);
         return accountNumber;
