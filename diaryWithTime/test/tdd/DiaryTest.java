@@ -57,6 +57,11 @@ public class DiaryTest {
         assertEquals("School resumption", expectedEntry.getTitle());
     }
     @Test
+    void diary_isLocked_UserCreatesAnEntry_throwsException(){
+        assertTrue(myDiary.isLocked());
+        assertThrows(IllegalArgumentException.class, ()-> myDiary.createEntry("School resumption", "I am going to school  tomorrow"));
+    }
+    @Test
     void userCreatesAnEntry_checkTheEntryByFindingItWithA_Wrong_Id_throwsException(){
         myDiary.unlockDiary(correctPassword);
         assertFalse(myDiary.isLocked());

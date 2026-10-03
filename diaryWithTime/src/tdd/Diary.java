@@ -27,16 +27,19 @@ public class Diary {
         return isLocked;
     }
     public void createEntry(String title, String body) {
+        checkIfLocked();
         int id = generateId();
         Entry entry = new Entry(id, title, body);
         entries.add(entry);
     }
     public void deleteEntry(int givenId){
+        checkIfLocked();
         validate(givenId);
         Entry foundEntry = findEntryById(givenId);
         entries.remove(foundEntry);
     }
     public Entry findEntryById(int givenId) {
+        checkIfLocked();
         boolean isValidId = isValid(givenId);
         if(!isValidId) return null;
         for(Entry entry : entries){
@@ -47,16 +50,19 @@ public class Diary {
         return null;
     }
     public void updateEntry(int givenId, String newTitle, String newBody) {
+        checkIfLocked();
         validate(givenId);
         Entry foundEntry = findEntryById(givenId);
         foundEntry.setTitle(newTitle);
         foundEntry.setBody(newBody);
     }
-
     public String getUsername() {
         return username;
     }
 
+    private void checkIfLocked() {
+        if(isLocked)throw new IllegalArgumentException("Diary is not unlock yet");
+    }
     private int generateId() {
         return entries.size() + 1;
     }
