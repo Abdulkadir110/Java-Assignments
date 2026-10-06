@@ -16,7 +16,7 @@ public class ATM {
             [3] Withdraw
             [4] Transfer
             [5] Check Balance
-            [0] Exit
+            [6] Exit
             """);
         char userChoice = input("Enter your option: ").charAt(0);
         switch (userChoice){
