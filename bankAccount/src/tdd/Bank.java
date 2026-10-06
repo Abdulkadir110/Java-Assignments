@@ -35,7 +35,7 @@ public class Bank {
         validateAccountNumber(accountNumber);
         return accounts.get(accountNumber - 1);
     }
-    public void transfer(int amount, int sender, int receiver, String senderPin) {
+    public void transfer(double amount, int sender, int receiver, String senderPin) {
         validateAccountNumber(sender);
         validateAccountNumber(receiver);
         withdraw(sender, amount, senderPin);
