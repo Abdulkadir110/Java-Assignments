@@ -49,7 +49,7 @@ public class ATM {
         try{
             int senderAccountNumber = convertToNumbers(input("Enter the sender's account number: "));
             int receiverAccountNumber = convertToNumbers(input("Enter the receiver's account number: "));
-            double amount = convertToNumbers(validate(input("How much do you want to transfer: ")));
+            double amount = convertToNumbers(input("How much do you want to transfer: "));
             String senderPin = input("Please Enter your pin to confirm your identity: ");
             firstBank.transfer(amount,senderAccountNumber,receiverAccountNumber,senderPin);
             print("transferred successfully>>>>>>>>>>>>>>>>>>>>>");
@@ -63,7 +63,7 @@ public class ATM {
 
     private static void withdraw() {
         try{
-            double amount = convertToNumbers(validate(input("How much do you want to withdraw: ")));
+            double amount = convertToNumbers(input("How much do you want to withdraw: "));
             int accountNumber = convertToNumbers(input("Enter the account number: "));
             String accountPin = input("Enter your pin");
             firstBank.withdraw(accountNumber, amount, accountPin);
@@ -77,7 +77,7 @@ public class ATM {
 
     private static void deposit() {
         try{
-            double amount = convertToNumbers(validate(input("How much do you want to deposit: ")));
+            double amount = convertToNumbers(input("How much do you want to deposit: "));
             int accountNumber = convertToNumbers(input("Enter the account number: "));
             firstBank.deposit(accountNumber, amount);
             print(amount + " deposited successfully >>>>>>>>>>>>>");
@@ -111,6 +111,7 @@ public class ATM {
         return input.nextLine();
     }
     private static int convertToNumbers(String numbers){
+        validate(numbers);
         return Integer.parseInt(numbers);
     }
     private static String validate(String numbers){
