@@ -31,5 +31,9 @@ public enum Nuban {
     Nuban(String bankCode) {
         this.bankCode = bankCode;
     }
+
+    public String getBankCode() {
+        return bankCode;
+    }
 }
 
