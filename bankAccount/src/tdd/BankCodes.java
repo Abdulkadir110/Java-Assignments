@@ -1,6 +1,6 @@
 package tdd;
 
-public enum Nuban {
+public enum BankCodes {
     ACCESSBANK("044"),
     AFRIBANK("014"),
     CITIBANK("023"),
@@ -28,7 +28,7 @@ public enum Nuban {
 
     private String bankCode;
 
-    Nuban(String bankCode) {
+    BankCodes(String bankCode) {
         this.bankCode = bankCode;
     }
 
