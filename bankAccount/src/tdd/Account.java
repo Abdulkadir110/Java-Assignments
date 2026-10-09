@@ -3,10 +3,17 @@ package tdd;
 public class Account {
     private double balance;
     private String pin;
+    private String accountNumber;
 
     public Account(String defaultPin){
         validateLength(defaultPin);
         this.pin = defaultPin;
+    }
+    public void setAccountNumber(String accountNumber){
+        this.accountNumber = accountNumber;
+    }
+    public String getAccountNumber(){
+        return accountNumber;
     }
     public double getBalance(String userPin) {
         validate(userPin);

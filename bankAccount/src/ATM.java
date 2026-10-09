@@ -1,4 +1,5 @@
 import tdd.Bank;
+import tdd.BankCodes;
 
 import java.util.Scanner;
 
@@ -7,7 +8,7 @@ public class ATM {
         gotoMainMenu();
     }
 
-    private static Bank firstBank = new Bank();
+    private static Bank firstBank = new Bank(BankCodes.FIRSTBANK);
 
     private static void gotoMainMenu(){
         print("""
@@ -34,7 +35,7 @@ public class ATM {
     }
     private static void checkBalance() {
         try{
-            int accountNumber = convertToNumbers(input("Enter your account number: "));
+            String accountNumber = input("Enter your account number: ");
             String pin = input("Please Enter your pin to confirm your identity: ");
             print("Your balance is " + firstBank.checkBalance(accountNumber,pin));
         }catch (IllegalArgumentException ex){
@@ -47,8 +48,8 @@ public class ATM {
 
     private static void transfer() {
         try{
-            int senderAccountNumber = convertToNumbers(input("Enter the sender's account number: "));
-            int receiverAccountNumber = convertToNumbers(input("Enter the receiver's account number: "));
+            String senderAccountNumber = input("Enter the sender's account number: ");
+            String receiverAccountNumber = input("Enter the receiver's account number: ");
             double amount = convertToNumbers(input("How much do you want to transfer: "));
             String senderPin = input("Please Enter your pin to confirm your identity: ");
             firstBank.transfer(amount,senderAccountNumber,receiverAccountNumber,senderPin);
@@ -64,7 +65,7 @@ public class ATM {
     private static void withdraw() {
         try{
             double amount = convertToNumbers(input("How much do you want to withdraw: "));
-            int accountNumber = convertToNumbers(input("Enter the account number: "));
+            String accountNumber = input("Enter the account number: ");
             String accountPin = input("Enter your pin");
             firstBank.withdraw(accountNumber, amount, accountPin);
             print(amount + " withdrew successfully >>>>>>>>>>>>>\nYour new balance is : " + firstBank.checkBalance(accountNumber, accountPin));
@@ -78,7 +79,7 @@ public class ATM {
     private static void deposit() {
         try{
             double amount = convertToNumbers(input("How much do you want to deposit: "));
-            int accountNumber = convertToNumbers(input("Enter the account number: "));
+            String accountNumber = input("Enter the account number: ");
             firstBank.deposit(accountNumber, amount);
             print(amount + " deposited successfully >>>>>>>>>>>>>");
         }catch (IllegalArgumentException ex){
@@ -92,7 +93,7 @@ public class ATM {
         try{
             String accountName = input("Enter your preferably account name: ");
             String pin = input("Enter your pin");
-            int accountNumber = firstBank.createAccount(accountName, pin);
+            String accountNumber = firstBank.createAccount(accountName, pin);
             print("Your account number is : " + accountNumber +  "\nAccount created Successfully>>>>>>");
         }catch (IllegalArgumentException ex){
             print(ex.getMessage());

@@ -5,13 +5,24 @@ import java.util.List;
 
 public class Bank {
     private List<Account> accounts = new ArrayList<>();
+    private BankCodes bankCodes;
 
-    private int generateAccountNumber() {
-        return accounts.size() + 1;
+    public Bank(BankCodes bankCodes) {
+        this.bankCodes = bankCodes;
     }
-    public int createAccount(String accountName, String userPin) {
-        int accountNumber = generateAccountNumber();
+
+    public BankCodes getBankCodes() {
+        return bankCodes;
+    }
+
+    private String generateAccountNumber() {
+        Nuban nuban = new Nuban();
+        return nuban.createAccountNumber(bankCodes);
+    }
+    public String createAccount(String accountName, String userPin) {
+        String accountNumber = generateAccountNumber();
         Account account = new Account(userPin);
+        account.setAccountNumber(accountNumber);
         accounts.add(account);
         return accountNumber;
     }
@@ -19,34 +30,46 @@ public class Bank {
         return accounts.size();
     }
 
-    public void deposit(int accountNumber, double amount) {
+    public void deposit(String accountNumber, double amount) {
         Account foundAccount = findAccount(accountNumber);
         foundAccount.deposit(amount);
     }
-    public double checkBalance(int accountNumber, String userPin){
-        return accounts.get(accountNumber - 1).getBalance(userPin);
-    }
-    public void withdraw(int accountNumber, double amount, String pin){
+    public double checkBalance(String accountNumber, String userPin){
         Account foundAccount = findAccount(accountNumber);
+        validateFoundAccount(foundAccount);
+        return foundAccount.getBalance(userPin);
+    }
+    public void withdraw(String accountNumber, double amount, String pin){
+        Account foundAccount = findAccount(accountNumber);
+        validateFoundAccount(foundAccount);
         validateTransaction(accountNumber, amount, pin);
         foundAccount.withdraw(amount, pin);
     }
-    private Account findAccount(int accountNumber) {
+    private Account findAccount(String accountNumber) {
         validateAccountNumber(accountNumber);
-        return accounts.get(accountNumber - 1);
+        for(Account account : accounts){
+            if(account.getAccountNumber().equals(accountNumber)){
+                return account;
+            }
+        }
+        return null;
     }
-    public void transfer(double amount, int sender, int receiver, String senderPin) {
-        validateAccountNumber(sender);
-        validateAccountNumber(receiver);
-        withdraw(sender, amount, senderPin);
-        deposit(receiver, amount);
+    public void transfer(double amount, String senderAccountNumber, String receiverAccountNumber, String senderPin) {
+        validateAccountNumber(senderAccountNumber);
+        validateAccountNumber(receiverAccountNumber);
+        withdraw(senderAccountNumber, amount, senderPin);
+        deposit(receiverAccountNumber, amount);
     }
-    private void validateTransaction(int accountNumber, double amount, String userPin){
+    private void validateTransaction(String accountNumber, double amount, String userPin){
         Account foundAccount = findAccount(accountNumber);
+        validateFoundAccount(foundAccount);
         if(foundAccount.getBalance(userPin) < amount ) throw new IllegalArgumentException("Insufficient balance");
     }
-    private void validateAccountNumber(int accountNumber){
-        boolean isValidAccountNumber = accountNumber > accounts.size() || accountNumber <= 0;
-        if(isValidAccountNumber) throw new IllegalArgumentException("Invalid Account number");
+    private void validateAccountNumber(String accountNumber){
+        Nuban nuban = new Nuban();
+        if(!nuban.isValid(accountNumber)) throw new IllegalArgumentException("Invalid Account number");
+    }
+    private void validateFoundAccount(Account account){
+        if(account == null) throw new IllegalArgumentException("Account hasn't been created");
     }
 }
