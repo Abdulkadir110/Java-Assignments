@@ -172,7 +172,7 @@ public class QueueTest {
         assertEquals(myQueue.remove(), "First task");
     }
     @Test
-    public void removeXFromEmptyQueue(){
+    public void add5Elements_Remove_5_ThenremoveXFromEmptyQueue_throws_Exception(){
         assertTrue(myQueue.isEmpty());
         assertTrue(myQueue.offer("First Task"));
         assertTrue(myQueue.offer("Second Task"));
@@ -187,8 +187,36 @@ public class QueueTest {
         assertThrows(IllegalArgumentException.class,() -> myQueue.remove());
 
     }
-
-
+    @Test
+    public void offer_Adds_5ElementsToQueue_popOut2Element_AddElement_QueueIsNotFull(){
+        assertTrue(myQueue.isEmpty());
+        assertTrue(myQueue.offer("First Task"));
+        assertTrue(myQueue.offer("Second Task"));
+        assertTrue(myQueue.offer("Third Task"));
+        assertTrue(myQueue.offer("Fourth Task"));
+        assertTrue(myQueue.offer("Fifth Task"));
+        assertEquals(myQueue.peek(), "First Task");
+        myQueue.remove();
+        myQueue.remove();
+        assertEquals(myQueue.peek(), "Third Task");
+        assertTrue(myQueue.offer("Sixth Task"));
+        assertFalse(myQueue.isEmpty());
+    }
+    @Test
+    public void adds_5ElementsToQueue_popOut2Element_AddElement_QueueIsNotFull(){
+        assertTrue(myQueue.isEmpty());
+        assertTrue(myQueue.add("First Task"));
+        assertTrue(myQueue.add("Second Task"));
+        assertTrue(myQueue.add("Third Task"));
+        assertTrue(myQueue.add("Fourth Task"));
+        assertTrue(myQueue.add("Fifth Task"));
+        assertEquals(myQueue.peek(), "First Task");
+        myQueue.remove();
+        myQueue.remove();
+        assertEquals(myQueue.peek(), "Third Task");
+        assertTrue(myQueue.add("Sixth Task"));
+        assertFalse(myQueue.isEmpty());
+    }
 
 
 
